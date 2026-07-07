@@ -1,15 +1,15 @@
-# CryptoGate SDK (rust-sdk)
+# GriffNode SDK (rust-sdk)
 
-Official SDK for the [CryptoGate](https://cryptogate.live) crypto-payments API —
+Official SDK for the [GriffNode](https://griffnode.com) crypto-payments API —
 accept Bitcoin, Ethereum, Litecoin, Dogecoin, Dash and ERC-20 tokens straight to your
 own wallet.
 
 ```
-cargo add cryptogate
+cargo add griffnode
 ```
 
-- **API reference:** https://docs.cryptogate.live/reference
-- **OpenAPI spec:** https://docs.cryptogate.live/openapi.yaml
+- **API reference:** https://docs.griffnode.com/reference
+- **OpenAPI spec:** https://docs.griffnode.com/openapi.yaml
 - **Generated from** `openapi.yaml` with [OpenAPI Generator](https://openapi-generator.tech)
   (`rust`) — see `.github/workflows/generate.yml`. Do not hand-edit generated files.
 

@@ -17,7 +17,7 @@ jobs:
             openapitools/openapi-generator-cli:v7.10.0 \
             generate -i /local/openapi.yaml -g rust -o /local \
             --skip-validate-spec \
-            --additional-properties=packageName=cryptogate,packageVersion=0.1.0,library=reqwest
+            --additional-properties=packageName=griffnode,packageVersion=0.1.0,library=reqwest
       - name: Commit regenerated SDK
         run: |
           git config user.name  "github-actions[bot]"

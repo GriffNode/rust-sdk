@@ -8,7 +8,7 @@
         "generatorName": "rust",
         "inputSpec": "openapi.yaml",
         "output": ".",
-        "additionalProperties": { "packageName": "cryptogate", "packageVersion": "0.1.0", "library": "reqwest" }
+        "additionalProperties": { "packageName": "griffnode", "packageVersion": "0.1.0", "library": "reqwest" }
       }
     }
   }
