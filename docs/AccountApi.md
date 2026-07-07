@@ -1,13 +1,13 @@
 # \AccountApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_account**](AccountApi.md#get_account) | **GET** /account | Merchant plan, usage and limits
 [**get_stats**](AccountApi.md#get_stats) | **GET** /stats | Merchant transaction analytics
 [**list_balances**](AccountApi.md#list_balances) | **GET** /balances | On-platform balances (for overage/top-up; NOT crypto settlement)
-[**list_invoices**](AccountApi.md#list_invoices) | **GET** /invoices | CryptoGate billing invoices (platform ↔ merchant)
+[**list_invoices**](AccountApi.md#list_invoices) | **GET** /invoices | GriffNode billing invoices (platform ↔ merchant)
 [**list_plans**](AccountApi.md#list_plans) | **GET** /plans | Plan catalogue and pricing
 
 
@@ -90,7 +90,7 @@ This endpoint does not need any parameter.
 ## list_invoices
 
 > models::ListInvoices200Response list_invoices(limit, offset)
-CryptoGate billing invoices (platform ↔ merchant)
+GriffNode billing invoices (platform ↔ merchant)
 
 ### Parameters
 

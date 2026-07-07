@@ -1,5 +1,5 @@
 /*
- * CryptoGate API
+ * GriffNode API
  *
  * Accept Bitcoin, Litecoin, Dogecoin, Dash, Ethereum and ERC-20 tokens. Server-to-server, authenticated with a secret API key (`Authorization: Bearer sk_live_…` for live, or `sk_test_…` for test mode — same base URL). All monetary amounts in API responses are JSON numbers; **webhook** amounts are strings to preserve decimal precision (see the `webhooks` section).  **Rate limits.** Every request is rate-limited per API key in two windows — per minute and per hour — by plan tier (min/hour): starter 30/500, business 100/2000, professional 300/5000, enterprise 1000/20000. Every response carries `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset` (Unix seconds) for the per-minute window. On `429` the body is `error: \"RATE_LIMIT_EXCEEDED\"` (either window) with a `Retry-After` header (seconds) — clients should retry after it. A separate `429` with `error: \"MONTHLY_LIMIT_REACHED\"` means the plan's monthly transaction quota (not the request rate). 
  *
@@ -23,7 +23,7 @@ pub enum PaymentWebhookError {
 }
 
 
-/// Signed with HMAC-SHA256 over the RAW request body. Verify by comparing `X-CryptoGate-Signature: sha256=<hex>` to `hex(hmac_sha256(webhook_secret, raw_body))` using a constant-time compare. Also sent: `X-CryptoGate-Event` (the event type) and `X-Webhook-ID` (unique delivery id — use for idempotency). 
+/// Signed with HMAC-SHA256 over the RAW request body. Verify by comparing `X-GriffNode-Signature: sha256=<hex>` to `hex(hmac_sha256(webhook_secret, raw_body))` using a constant-time compare. Also sent: `X-GriffNode-Event` (the event type) and `X-Webhook-ID` (unique delivery id — use for idempotency). 
 pub async fn payment_webhook(configuration: &configuration::Configuration, webhook_payload: Option<models::WebhookPayload>) -> Result<(), Error<PaymentWebhookError>> {
     let local_var_configuration = configuration;
 

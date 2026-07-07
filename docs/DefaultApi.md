@@ -1,6 +1,6 @@
 # \DefaultApi
 
-All URIs are relative to *https://api.cryptogate.live/v1*
+All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > payment_webhook(webhook_payload)
 Payment lifecycle event delivered to the merchant's webhook URL
 
-Signed with HMAC-SHA256 over the RAW request body. Verify by comparing `X-CryptoGate-Signature: sha256=<hex>` to `hex(hmac_sha256(webhook_secret, raw_body))` using a constant-time compare. Also sent: `X-CryptoGate-Event` (the event type) and `X-Webhook-ID` (unique delivery id — use for idempotency). 
+Signed with HMAC-SHA256 over the RAW request body. Verify by comparing `X-GriffNode-Signature: sha256=<hex>` to `hex(hmac_sha256(webhook_secret, raw_body))` using a constant-time compare. Also sent: `X-GriffNode-Event` (the event type) and `X-Webhook-ID` (unique delivery id — use for idempotency). 
 
 ### Parameters
 
