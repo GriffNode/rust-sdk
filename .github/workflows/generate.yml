@@ -18,6 +18,13 @@ jobs:
             generate -i /local/openapi.yaml -g rust -o /local \
             --skip-validate-spec \
             --additional-properties=packageName=griffnode,packageVersion=0.1.0,library=reqwest
+      - name: Fix Cargo.toml metadata (generator has no URL properties)
+        run: |
+          sed -i 's#^authors = .*#authors = ["GriffNode <dev@griffnode.com>"]#' Cargo.toml
+          sed -i 's#^description = .*#description = "Official GriffNode SDK. Non-custodial crypto payment gateway: accept BTC, ETH, LTC, DOGE, DASH and ERC-20 tokens straight to your own wallet."#' Cargo.toml
+          grep -q '^homepage' Cargo.toml     || sed -i '/^license/i homepage = "https://griffnode.com"' Cargo.toml
+          grep -q '^repository' Cargo.toml   || sed -i '/^license/i repository = "https://github.com/GriffNode/rust-sdk"' Cargo.toml
+          grep -q '^documentation' Cargo.toml|| sed -i '/^license/i documentation = "https://docs.griffnode.com/reference"' Cargo.toml
       - name: Commit regenerated SDK
         run: |
           git config user.name  "github-actions[bot]"
