@@ -1,6 +1,6 @@
 [package]
 name = "griffnode"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["GriffNode <dev@griffnode.com>"]
 description = "Official GriffNode SDK. Non-custodial crypto payment gateway: accept BTC, ETH, LTC, DOGE, DASH and ERC-20 tokens straight to your own wallet."
 homepage = "https://griffnode.com"
