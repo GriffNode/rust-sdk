@@ -74,6 +74,8 @@ pub mod transaction;
 pub use self::transaction::Transaction;
 pub mod transaction_envelope;
 pub use self::transaction_envelope::TransactionEnvelope;
+pub mod transaction_exception;
+pub use self::transaction_exception::TransactionException;
 pub mod transaction_status;
 pub use self::transaction_status::TransactionStatus;
 pub mod webhook_payload;

@@ -18,6 +18,8 @@ pub struct Transaction {
     pub transaction_id: String,
     #[serde(rename = "status")]
     pub status: models::TransactionStatus,
+    #[serde(rename = "exception", skip_serializing_if = "Option::is_none")]
+    pub exception: Option<models::TransactionException>,
     #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
     pub r#type: Option<Type>,
     #[serde(rename = "crypto")]
@@ -75,6 +77,7 @@ impl Transaction {
         Transaction {
             transaction_id,
             status,
+            exception: None,
             r#type: None,
             crypto,
             deposit_address: None,

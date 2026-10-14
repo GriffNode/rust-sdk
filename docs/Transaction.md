@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transaction_id** | **String** |  | 
 **status** | [**models::TransactionStatus**](TransactionStatus.md) |  | 
+**exception** | Option<[**models::TransactionException**](TransactionException.md)> |  | [optional]
 **r#type** | Option<**String**> |  | [optional]
 **crypto** | [**models::CryptoSymbol**](CryptoSymbol.md) |  | 
 **deposit_address** | Option<**String**> |  | [optional]

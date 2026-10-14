@@ -22,6 +22,8 @@ pub struct WebhookPayload {
     pub transaction_id: String,
     #[serde(rename = "status")]
     pub status: models::TransactionStatus,
+    #[serde(rename = "exception", skip_serializing_if = "Option::is_none")]
+    pub exception: Option<models::TransactionException>,
     #[serde(rename = "currency_crypto", skip_serializing_if = "Option::is_none")]
     pub currency_crypto: Option<models::CryptoSymbol>,
     #[serde(rename = "currency_fiat", skip_serializing_if = "Option::is_none")]
@@ -53,6 +55,7 @@ impl WebhookPayload {
             timestamp,
             transaction_id,
             status,
+            exception: None,
             currency_crypto: None,
             currency_fiat: None,
             amount_fiat: None,
@@ -81,6 +84,10 @@ pub enum Event {
     Expired,
     #[serde(rename = "payment.failed")]
     Failed,
+    #[serde(rename = "payment.paid_late")]
+    PaidLate,
+    #[serde(rename = "payment.needs_review")]
+    NeedsReview,
 }
 
 impl Default for Event {
