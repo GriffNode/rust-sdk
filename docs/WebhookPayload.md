@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **timestamp** | **String** |  | 
 **transaction_id** | **String** |  | 
 **status** | [**models::TransactionStatus**](TransactionStatus.md) |  | 
+**exception** | Option<[**models::TransactionException**](TransactionException.md)> |  | [optional]
 **currency_crypto** | Option<[**models::CryptoSymbol**](CryptoSymbol.md)> |  | [optional]
 **currency_fiat** | Option<[**models::FiatCurrency**](FiatCurrency.md)> |  | [optional]
 **amount_fiat** | Option<**String**> | Decimal string. | [optional]
