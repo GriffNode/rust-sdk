@@ -36,7 +36,7 @@ No authorization required
 
 ## hosted_checkout_redirect
 
-> hosted_checkout_redirect(pk, amount, crypto, link)
+> hosted_checkout_redirect(pk, amount, crypto, currency, link)
 Hosted-checkout redirect (browser flow, publishable key)
 
 Browser-facing redirect to the hosted payment page, authenticated by a **publishable** key in the query string (safe to expose client-side). Not used by the server-side SDKs — included for completeness. 
@@ -49,7 +49,8 @@ Name | Type | Description  | Required | Notes
 **pk** | **String** | Publishable key, pk_live_… / pk_test_… | [required] |
 **amount** | **String** | Fiat amount (≥ 1.00 USD equivalent). | [required] |
 **crypto** | [**CryptoSymbol**](.md) |  | [required] |
-**link** | Option<**String**> | Payment-link slug for attribution. |  |
+**currency** | Option<**String**> | Fiat currency of `amount`. Ignored when `link` is set: a payment link always uses its own amount and currency. |  |[default to USD]
+**link** | Option<**String**> | Payment-link slug. The link's own amount, currency, expiry and single-use rules apply (410 if expired, 409 if a single-use link was already paid). |  |
 
 ### Return type
 
