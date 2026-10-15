@@ -59,7 +59,7 @@ pub async fn get_health(configuration: &configuration::Configuration, ) -> Resul
 }
 
 /// Browser-facing redirect to the hosted payment page, authenticated by a **publishable** key in the query string (safe to expose client-side). Not used by the server-side SDKs — included for completeness. 
-pub async fn hosted_checkout_redirect(configuration: &configuration::Configuration, pk: &str, amount: &str, crypto: models::CryptoSymbol, link: Option<&str>) -> Result<(), Error<HostedCheckoutRedirectError>> {
+pub async fn hosted_checkout_redirect(configuration: &configuration::Configuration, pk: &str, amount: &str, crypto: models::CryptoSymbol, currency: Option<&str>, link: Option<&str>) -> Result<(), Error<HostedCheckoutRedirectError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -70,6 +70,9 @@ pub async fn hosted_checkout_redirect(configuration: &configuration::Configurati
     local_var_req_builder = local_var_req_builder.query(&[("pk", &pk.to_string())]);
     local_var_req_builder = local_var_req_builder.query(&[("amount", &amount.to_string())]);
     local_var_req_builder = local_var_req_builder.query(&[("crypto", &crypto.to_string())]);
+    if let Some(ref local_var_str) = currency {
+        local_var_req_builder = local_var_req_builder.query(&[("currency", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = link {
         local_var_req_builder = local_var_req_builder.query(&[("link", &local_var_str.to_string())]);
     }

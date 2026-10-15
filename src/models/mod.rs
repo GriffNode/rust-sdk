@@ -70,6 +70,8 @@ pub mod plan;
 pub use self::plan::Plan;
 pub mod plan_tier;
 pub use self::plan_tier::PlanTier;
+pub mod recurring_webhook_payload;
+pub use self::recurring_webhook_payload::RecurringWebhookPayload;
 pub mod transaction;
 pub use self::transaction::Transaction;
 pub mod transaction_envelope;
