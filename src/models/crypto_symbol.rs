@@ -29,6 +29,8 @@ pub enum CryptoSymbol {
     Usdt,
     #[serde(rename = "USDC")]
     Usdc,
+    #[serde(rename = "EURC")]
+    Eurc,
     #[serde(rename = "DAI")]
     Dai,
     #[serde(rename = "WBTC")]
@@ -58,6 +60,7 @@ impl std::fmt::Display for CryptoSymbol {
             Self::Eth => write!(f, "ETH"),
             Self::Usdt => write!(f, "USDT"),
             Self::Usdc => write!(f, "USDC"),
+            Self::Eurc => write!(f, "EURC"),
             Self::Dai => write!(f, "DAI"),
             Self::Wbtc => write!(f, "WBTC"),
             Self::Shib => write!(f, "SHIB"),
