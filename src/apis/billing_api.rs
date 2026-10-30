@@ -20,7 +20,6 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum CreateBillingCheckoutError {
     Status401(models::Error),
-    Status402(models::Error),
     Status403(models::Error),
     UnknownValue(serde_json::Value),
 }

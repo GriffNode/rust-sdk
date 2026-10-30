@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_account**](AccountApi.md#get_account) | **GET** /account | Merchant plan, usage and limits
 [**get_stats**](AccountApi.md#get_stats) | **GET** /stats | Merchant transaction analytics
-[**list_balances**](AccountApi.md#list_balances) | **GET** /balances | On-platform balances (for overage/top-up; NOT crypto settlement)
+[**list_balances**](AccountApi.md#list_balances) | **GET** /balances | Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
 [**list_invoices**](AccountApi.md#list_invoices) | **GET** /invoices | GriffNode billing invoices (platform ↔ merchant)
 [**list_plans**](AccountApi.md#list_plans) | **GET** /plans | Plan catalogue and pricing
 
@@ -65,7 +65,7 @@ This endpoint does not need any parameter.
 ## list_balances
 
 > models::ListBalances200Response list_balances()
-On-platform balances (for overage/top-up; NOT crypto settlement)
+Deprecated: always an empty list. GriffNode keeps no on-platform balance (no overage, no top-ups); crypto settles straight to your wallet.
 
 ### Parameters
 

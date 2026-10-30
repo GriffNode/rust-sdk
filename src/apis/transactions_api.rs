@@ -21,7 +21,6 @@ use super::{Error, configuration};
 pub enum CreateDetailedTransactionError {
     Status400(models::Error),
     Status401(models::Error),
-    Status402(models::Error),
     Status403(models::Error),
     Status429(models::Error),
     UnknownValue(serde_json::Value),
@@ -33,7 +32,6 @@ pub enum CreateDetailedTransactionError {
 pub enum CreateTransactionError {
     Status400(models::Error),
     Status401(models::Error),
-    Status402(models::Error),
     Status403(models::Error),
     Status409(models::InlineObject),
     Status429(models::Error),

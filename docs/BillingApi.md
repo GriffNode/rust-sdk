@@ -4,14 +4,14 @@ All URIs are relative to *https://api.griffnode.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_billing_checkout**](BillingApi.md#create_billing_checkout) | **POST** /billing/checkout | Start a plan upgrade or account top-up
+[**create_billing_checkout**](BillingApi.md#create_billing_checkout) | **POST** /billing/checkout | Start a plan upgrade
 
 
 
 ## create_billing_checkout
 
 > models::TransactionEnvelope create_billing_checkout(create_billing_checkout_request)
-Start a plan upgrade or account top-up
+Start a plan upgrade
 
 ### Parameters
 

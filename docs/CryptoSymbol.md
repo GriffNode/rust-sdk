@@ -14,12 +14,12 @@
 | Eurc | EURC |
 | Dai | DAI |
 | Wbtc | WBTC |
+| Weth | WETH |
 | Shib | SHIB |
 | Pepe | PEPE |
 | Link | LINK |
 | Uni | UNI |
-| Aave | AAVE |
-| Mkr | MKR |
+| Leo | LEO |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

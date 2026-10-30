@@ -35,6 +35,8 @@ pub enum CryptoSymbol {
     Dai,
     #[serde(rename = "WBTC")]
     Wbtc,
+    #[serde(rename = "WETH")]
+    Weth,
     #[serde(rename = "SHIB")]
     Shib,
     #[serde(rename = "PEPE")]
@@ -43,10 +45,8 @@ pub enum CryptoSymbol {
     Link,
     #[serde(rename = "UNI")]
     Uni,
-    #[serde(rename = "AAVE")]
-    Aave,
-    #[serde(rename = "MKR")]
-    Mkr,
+    #[serde(rename = "LEO")]
+    Leo,
 
 }
 
@@ -63,12 +63,12 @@ impl std::fmt::Display for CryptoSymbol {
             Self::Eurc => write!(f, "EURC"),
             Self::Dai => write!(f, "DAI"),
             Self::Wbtc => write!(f, "WBTC"),
+            Self::Weth => write!(f, "WETH"),
             Self::Shib => write!(f, "SHIB"),
             Self::Pepe => write!(f, "PEPE"),
             Self::Link => write!(f, "LINK"),
             Self::Uni => write!(f, "UNI"),
-            Self::Aave => write!(f, "AAVE"),
-            Self::Mkr => write!(f, "MKR"),
+            Self::Leo => write!(f, "LEO"),
         }
     }
 }

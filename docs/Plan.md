@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **monthly_price_usd** | Option<**f64**> |  | [optional]
 **yearly_price_usd** | Option<**f64**> |  | [optional]
 **monthly_transaction_limit** | Option<**i32**> |  | [optional]
-**overage_cost_per_tx** | Option<**f64**> |  | [optional]
+**overage_cost_per_tx** | Option<**f64**> | Always 0. Plans have a hard monthly limit and no overage. | [optional]
 **webhook_support** | Option<**bool**> |  | [optional]
 **webhook_limit** | Option<**i32**> |  | [optional]
 **ip_whitelist** | Option<**bool**> |  | [optional]

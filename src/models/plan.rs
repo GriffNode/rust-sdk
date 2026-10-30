@@ -21,6 +21,7 @@ pub struct Plan {
     pub yearly_price_usd: Option<Option<f64>>,
     #[serde(rename = "monthly_transaction_limit", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub monthly_transaction_limit: Option<Option<i32>>,
+    /// Always 0. Plans have a hard monthly limit and no overage.
     #[serde(rename = "overage_cost_per_tx", skip_serializing_if = "Option::is_none")]
     pub overage_cost_per_tx: Option<f64>,
     #[serde(rename = "webhook_support", skip_serializing_if = "Option::is_none")]
